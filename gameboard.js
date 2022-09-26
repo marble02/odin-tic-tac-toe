@@ -4,6 +4,7 @@
     let oMoves = [];
     let turnText = document.querySelector(".turn-text");
     let winnerName = document.querySelector(".winner-name");
+    const infoContainer = document.querySelector(".info");
 
     turnText.textContent = turn;
 
@@ -47,6 +48,18 @@
         winnerName.textContent = `Winner is ${winner}`;
     }
 
+    function unbind() {
+        let cells = document.querySelectorAll(".cell");
+        cells.forEach(c => c.removeEventListener("click", gameboard.handleClick));
+    }
+    
+    function resetRefresh() {
+        let reset = document.createElement("button");
+        reset.textContent = "New Game";
+        reset.addEventListener("click", () => {location.reload()});
+        infoContainer.appendChild(reset);
+    }
+
     function checkWin() {
         const winStates = [
             [0, 1, 2],
@@ -70,13 +83,15 @@
                     ocount += 1;
                 }
                 if (xcount == 3) {
-                    console.log("X wins");
                     displayWinner("X");
+                    unbind();
+                    resetRefresh();
                     return "X"
                 }
                 if (ocount == 3) {
-                    console.log("O wins");
                     displayWinner("O");
+                    unbind();
+                    resetRefresh();
                     return "O"
                 }
             }
@@ -101,7 +116,6 @@
             element.addEventListener("click", this.handleClick);
         },
         handleClick: function() {
-            console.log(b[this.dataset.index], b[this.dataset.index] == null)
             if (b[this.dataset.index] == "") {
                 b[this.dataset.index] = turn;
                 updatePlays(turn, this.dataset.index);
