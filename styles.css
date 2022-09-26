@@ -1,0 +1,47 @@
+body {
+    background-color: bisque;
+    --board-bg-color: rgb(247, 152, 142);
+}
+
+.container {
+    background-color: var(--board-bg-color);
+    height: 600px;
+    width: 600px;
+    margin: auto;
+    margin-top: 10%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    color: #eee;
+    text-align: center;
+}
+
+.board {
+    height: 80%;
+    width: 90%;
+    background-color: gray;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.cell {
+    /* width: 30%;
+    height: 30%; */
+    background-color: var(--board-bg-color);
+    /* border-radius: 10px; */
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #eee;
+
+}
