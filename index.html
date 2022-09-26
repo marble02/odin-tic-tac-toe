@@ -9,12 +9,23 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="title">Tic-Tac-Toe</h1>
-        <div class="board"></div>
-
+        <div class="board-container">
+            <h1 class="title">Tic-Tac-Toe</h1>
+            <div class="board"></div>
+        </div>
+        <div class="info">
+            <div class="turn">
+                <h1>Turn:</h1>
+                <p class="turn-text info-text"></p>
+            </div>
+            <div class="winner">
+                <h1>Winner:</h1>
+                <p class="winner-name info-text"></p>
+            </div>
+        </div>
     </div>
+    
     <script src="gameboard.js"></script>
-    <script src="players.js"></script>
 
 </body>
 </html>

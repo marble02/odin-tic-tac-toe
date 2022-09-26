@@ -3,12 +3,12 @@ body {
     --board-bg-color: rgb(247, 152, 142);
 }
 
-.container {
+.board-container {
     background-color: var(--board-bg-color);
     height: 600px;
     width: 600px;
     margin: auto;
-    margin-top: 10%;
+    margin-right: 5%;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -33,15 +33,27 @@ body {
 }
 
 .cell {
-    /* width: 30%;
-    height: 30%; */
     background-color: var(--board-bg-color);
-    /* border-radius: 10px; */
-    /* text-align: center; */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 50px;
     color: #eee;
+}
 
+.container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    margin: 10%;
+}
+
+.info-text {
+    font-size: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
