@@ -45,7 +45,7 @@
     }
 
     function displayWinner(winner) {
-        winnerName.textContent = `Winner is ${winner}`;
+        winnerName.textContent = `${winner}`;
     }
 
     function unbind() {
@@ -95,6 +95,12 @@
                     return "O"
                 }
             }
+        }
+        if (xMoves.length + oMoves.length == 9) {
+            displayWinner("Draw")
+            unbind();
+            resetRefresh();
+            return
         }
     }
 
