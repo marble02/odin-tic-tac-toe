@@ -13,13 +13,6 @@
     b.length = 9;
     b.fill("");
 
-    const Player = (symbol) => {
-        const name = `Player ${symbol}`;
-        return {name, symbol}
-    }
-
-    const players = [Player("X"), Player("O")]
-
     function toggleTurn() {
         if (turn == "X") {
             turn = "O";
@@ -72,8 +65,8 @@
             [2, 4, 6]
         ];
         for (let w of winStates) {
-            xcount = 0;
-            ocount = 0;
+            let xcount = 0;
+            let ocount = 0;
             for (let i of w) {
                 let string_i = String(i);
                 if (xMoves.includes(string_i)) {
